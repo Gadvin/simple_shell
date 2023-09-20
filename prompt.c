@@ -8,5 +8,5 @@
 
 void gad_prompt(void)
 {
-	g_print(":) ");
+	g_print("$ ");
 }
