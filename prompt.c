@@ -1,50 +1,52 @@
 #include "shell.h"
 
 /**
- * gad_prompt-function to display content
+ * prompt - funtion to prompt the simple shell
+ * @argc: number of argument to counter
+ * @argv: pointer to the argument of values
+ * @env: pointer to the environment variable
  *
- * Return: NULL
- */
+ * Return: success if null or address
+*/
 
-void gad_prompt(void)
+int prompt(int argc, char **argv, char **env)
 {
-	g_print("$ ");
-	/*
-	char *cmd = NULL;
-	size_t n = 10;
-	size_t ress;
-	char *e = "exit";
-	char *en = "env";
+	char *head = "GAD$ ";
+	char *input = NULL;
+	char **n = NULL;
 
-	cmd = malloc (sizeof (char) * 10);
-	
+	(void)argc;
+
 	while (1)
 	{
-		getline(&cmd, &n, stdin);
-		printf("$ ");
-		if (cmd[0] == '\0')
+		if (isatty(STDIN_FILENO))
+			write(1, head, 5);
+
+		input = _prompt(argv);
+		if (input == NULL)
+			continue;
+
+		n = s_data(input, argv);
+		if (n == NULL)
 		{
-			exe_command(cmd);
+			free(input);
+			continue;
 		}
-		else if (_strcmp(cmd, e) == 0)
-		{
-			exit(98);
-		}
-		else if (_strcmp(cmd, en) == 0) 
-		{
-			environmentVar();
-		}
-		else
-		{
-			exe_command(cmd);
-		}
-		
-		if (cmd!= NULL) 
-		{
-			free(cmd);
-		}
+		free(input);
+
+		r_cmd(n, argv, env);
+
+		free_array(n);
 	}
-		
-	free(cmd);
-	*/
+
+	if (input != NULL)
+	{
+		free(input);
+	}
+
+	if (n != NULL)
+	{
+		free_array(n);
+	}
+	return (0);
 }

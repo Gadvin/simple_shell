@@ -8,16 +8,31 @@
 #include <stdbool.h>
 #include <sys/wait.h>
 #include <sys/types.h>
+#include <signal.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <linux/limits.h>
 
-extern char **environ;
 
-int _strcmp(char *s1, char *s2);
-int _strlen(char *s);
-void environmentVar(void);
-void gad_prompt(void);
-void g_print(char *message);
-void r_command(char *command, size_t size);
-void exe_command(const char *command);
+char **s_data(char *input, char **argv);
+char *_concate(char *end, const char *str);
+char *_prompt(char **argv);
+char *display_env(char **env, char *cmd);
+int _cp(char *end, char *str);
+int _notfound(char **cmd, char **env);
+int _nv(char *input);
+int _strcom(char *str1, char *str2, size_t sz);
+int _strlen(char *str);
+int prompt(int argc, char **argv, char **env);
+int show_path(char **value, char **env);
+void _show(int position, char **argv, char *msg);
+void _showerror(int position, char **argv, char *cmd);
+void exit_cmd(char **cmd);
+void free_array(char **arr);
+void r_cmd(char **value, char **argv, char **env);
+void show_env(char **env);
+
 
 
 #endif
