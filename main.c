@@ -7,7 +7,7 @@
  * @env: pointer to the environment addres
  *
  * Return: null when empty or address of code.
- * */
+ */
 
 int main(int argc, char **argv, char **env)
 {
