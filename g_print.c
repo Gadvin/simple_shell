@@ -7,7 +7,7 @@
  * Return: NULL
  */
 
-void g_print(const char *message)
+void g_print(char *message)
 {
-	write(STDOUT_FILENO, message, strlen(message));
+	write(STDOUT_FILENO, message, _strlen(message));
 }
