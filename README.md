@@ -4,7 +4,7 @@ SIMPLE SHELL PROJECT
 This is an ALX assignemnt project that I did after I was did the first project and failed.
 At first I had a partner but we unpaired and now am doing it alone.
 
-##USAGE
+## USAGE
 $ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
 GAD$
@@ -18,5 +18,5 @@ hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 GAD$
 
-##AUTHOR(S)
+## AUTHOR(S)
 this simple shell project is done by GADVIN GITAMO
