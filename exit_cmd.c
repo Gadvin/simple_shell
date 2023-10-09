@@ -6,6 +6,7 @@
  * Return: will return null or address when susscessful
 */
 
+
 void exit_cmd(char **cmd)
 {
 	int i = 0;

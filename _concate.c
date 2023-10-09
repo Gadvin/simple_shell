@@ -23,3 +23,4 @@ char *_concate(char *end, const char *str)
 
 	return (end);
 }
+

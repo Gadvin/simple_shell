@@ -6,6 +6,7 @@
  * Return: show null or address when sussful
 */
 
+
 void free_array(char **arr)
 {
 	int i = 0;

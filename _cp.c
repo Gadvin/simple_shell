@@ -26,3 +26,4 @@ int _cp(char *end, char *str)
 
 	return (1);
 }
+
