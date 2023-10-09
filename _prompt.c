@@ -1,6 +1,5 @@
 #include "shell.h"
 
-
 /**
  * _prompt - funtction to prompts the shell file
  * @argv: pointer to the value of argument
