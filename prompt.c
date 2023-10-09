@@ -1,5 +1,6 @@
 #include "shell.h"
 
+
 /**
  * prompt - funtion to prompt the simple shell
  * @argc: number of argument to counter
